@@ -43,9 +43,19 @@ public class ContactsADT<Person> implements ContactADT<Person> {
         return response;
     }
 
+    public void setName(String FirstName, String LastName) {
+        arrayOfNames.add(FirstName + " " + LastName);
+    }
+
+    public ArrayList getArrayOfNames() {
+        return arrayOfNames;
+    }
+
+
     @Override
-    public boolean add(Person person) {
-        return false;
+    public boolean add(Person personData) {
+        add(size, personData);
+        return true;
     }
 
     @Override
