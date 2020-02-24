@@ -15,6 +15,10 @@ public class ContactList<Person> implements ContactADT<Person> {
         return size;
     }
 
+    private void addFirst(Person personData) {
+        head = new Node<>(personData, head);
+        size++;
+    }
 
 
 
