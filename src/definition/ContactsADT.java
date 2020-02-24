@@ -15,6 +15,11 @@ public class ContactsADT<Person> implements ContactADT<Person> {
         return size;
     }
 
+    private void addFirst(Person personData) {
+        head = new Node<>(personData, head);
+        size++;
+    }
+
     @Override
     public boolean add(Person person) {
         return false;
