@@ -37,4 +37,11 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Person(String firstName, String lastName, String[] contactNo, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contactNo = contactNo;
+        this.email = email;
+    }
 }
