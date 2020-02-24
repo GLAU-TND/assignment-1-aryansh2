@@ -2,8 +2,11 @@ package definition;
 
 import adt.ContactADT;
 
-public class ContactsADT<Person> implements ContactADT<Person> {
+import java.util.ArrayList;
 
+public class ContactsADT<Person> implements ContactADT<Person> {
+    ArrayList<String> arrayOfNames = new ArrayList<>();
+    ArrayList<String> arrayOfFirstName = new ArrayList<>();
 
     @Override
     public boolean add(Person person) {
