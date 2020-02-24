@@ -90,12 +90,49 @@ public class ContactsADT<Person> implements ContactADT<Person> {
 
     @Override
     public boolean remove(int index) {
-        return false;
+        boolean response = false;
+        if (index - 1 < 0 || (index - 1) > getSize()) {
+            throw new IndexOutOfBoundsException(Integer.toString(index - 1));
+        } else if (index - 1 == 0) {
+            removeFirst();
+            arrayOfNames.remove(index - 1);
+            response = true;
+        } else {
+            Node<Person> previousNode = getNode(index - 1);
+            removeAfter(previousNode);
+            arrayOfNames.remove(index - 1);
+            response = true;
+
+        }
+        return response;
+    }
+
+    public void setFirstNameInList(String name) {
+        arrayOfFirstName.add(name);
+    }
+
+    public ArrayList getArrayOfFirstName() {
+        return arrayOfFirstName;
     }
 
     @Override
-    public void search(String Name) {
-
+    public void search(String name) {
+        for (int i = 0; i < arrayOfFirstName.size(); i++) {
+            if (name.compareTo(arrayOfFirstName.get(i)) == 0) {
+                counter++;
+            }
+        }
+        if (counter != 0) {
+            System.out.println(counter + "Match Found");
+            for (int i = 0; i < arrayOfFirstName.size(); i++) {
+                if (name.compareTo(arrayOfFirstName.get(i)) == 0) {
+                    Node<Person> personNode = getNode(i);
+                    System.out.println(personNode.getData().toString());
+                }
+            }
+        } else {
+            System.out.println("No Match Found");
+        }
     }
 
     @Override
