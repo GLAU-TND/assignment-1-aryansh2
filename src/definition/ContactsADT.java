@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class ContactsADT<Person> implements ContactADT<Person> {
     ArrayList<String> arrayOfNames = new ArrayList<>();
     ArrayList<String> arrayOfFirstName = new ArrayList<>();
+    private Node<Person> head;
+    private int size = 0;
+    private int counter;
+
 
     @Override
     public boolean add(Person person) {
