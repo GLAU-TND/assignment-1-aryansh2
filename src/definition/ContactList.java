@@ -20,6 +20,11 @@ public class ContactList<Person> implements ContactADT<Person> {
         size++;
     }
 
+    private void addAfter(Node<Person> personNode, Person personData) {
+        personNode.next = new Node<>(personData, personNode.next);
+    }
+
+
 
 
 
