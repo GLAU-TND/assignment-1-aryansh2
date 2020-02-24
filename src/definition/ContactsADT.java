@@ -11,6 +11,9 @@ public class ContactsADT<Person> implements ContactADT<Person> {
     private int size = 0;
     private int counter;
 
+    public int getSize() {
+        return size;
+    }
 
     @Override
     public boolean add(Person person) {
