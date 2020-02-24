@@ -71,6 +71,22 @@ public class ContactsADT<Person> implements ContactADT<Person> {
         return response;
     }
 
+    private Person removeAfter(Node<Person> node) {
+        Person response = null;
+        Node<Person> temp = node.getNext();
+        if (temp != null) {
+            node.next = temp.getNext();
+            size--;
+            response = temp.getData();
+        }
+        if (temp == null) {
+            node = null;
+            size--;
+        }
+        return response;
+    }
+
+
 
     @Override
     public boolean remove(int index) {
