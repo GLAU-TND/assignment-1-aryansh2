@@ -30,4 +30,9 @@ class Node<Person> {
 
 public class ContactsADT {
     ArrayList<String> arrayOfNames = new ArrayList<>();
+    ArrayList<String> arrayOfFirstName = new ArrayList<>();
+    private Node<Person> head;
+    private int size = 0;
+    private int counter;
+
 }
