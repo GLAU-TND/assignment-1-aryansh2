@@ -29,8 +29,24 @@ public class ContactsADT<Person> implements ContactADT<Person> {
         private Person data;
         private Node<Person> next;
 
-        public Node(Person data, Node<Person> next) {
+        private Node(Person data, Node<Person> next) {
             this.data = data;
+            this.next = next;
+        }
+
+        private Person getData() {
+            return data;
+        }
+
+        private void setData(Person data) {
+            this.data = data;
+        }
+
+        private Node<Person> getNext() {
+            return next;
+        }
+
+        private void setNext(Node<Person> next) {
             this.next = next;
         }
     }
