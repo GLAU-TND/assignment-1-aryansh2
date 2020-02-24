@@ -35,4 +35,7 @@ public class ContactsADT {
     private int size = 0;
     private int counter;
 
+    public int getSize() {
+        return size;
+    }
 }
