@@ -48,5 +48,34 @@ public class Main {
                     Person person = new Person(FirstName, LastName, contactNumber, email);
                     contactList.add(person);
                     break;
+                case 2:
+                    contactList.viewAll();
+                    break;
+                case 3:
+                    System.out.println("You could search for a contact from there contact name");
+                    String name = scanner.next();
+                    contactList.search(name);
+                case 4:
+                    System.out.println("Here are your Contacts");
+                    for (int i = 0; i < contactList.getArrayOfNames().size(); i++) {
+                        System.out.println((i + 1) + ". " + contactList.getArrayOfNames().get(i));
+                    }
+                    System.out.println("Press the number against the contact to delete it");
+                    int index = scanner.nextInt();
+                    String tempName = contactList.getArrayOfNames().get(index - 1).toString();
+                    contactList.remove(index);
+                    System.out.println(tempName + "has been deleted from your contact");
+                    break;
+                case 5:
+                    System.out.println("Thank you for using our services");
+                    flag = false;
+                    break;
+                default:
+                    System.out.println("Invalid Input");
+                    break;
+            }
+
+
         }
     }
+}
