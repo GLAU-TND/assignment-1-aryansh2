@@ -6,24 +6,24 @@ class Node<Person> {
     private Person data;
     private Node<Person> next;
 
-    private Node(Person data, Node<Person> next) {
+    Node(Person data, Node<Person> next) {
         this.data = data;
         this.next = next;
     }
 
-    public Person getData() {
+    private Person getData() {
         return data;
     }
 
-    public void setData(Person data) {
+    private void setData(Person data) {
         this.data = data;
     }
 
-    public Node<Person> getNext() {
+    private Node<Person> getNext() {
         return next;
     }
 
-    public void setNext(Node<Person> next) {
+    private void setNext(Node<Person> next) {
         this.next = next;
     }
 }
@@ -37,5 +37,10 @@ public class ContactsADT {
 
     public int getSize() {
         return size;
+    }
+
+    private void addFirst(Person personData) {
+        head = new Node<>(personData, head);
+        size++;
     }
 }
