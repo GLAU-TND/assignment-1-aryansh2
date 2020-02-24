@@ -137,7 +137,15 @@ public class ContactsADT<Person> implements ContactADT<Person> {
 
     @Override
     public void viewAll() {
-
+        if (size != 0) {
+            System.out.println("--Here are all your contacts--");
+            for (int i = 0; i < size; i++) {
+                Person data = this.getNode(i).getData();
+                System.out.println(data);
+            }
+        } else {
+            System.out.println("No Results Found!");
+        }
     }
 
     private static class Node<Person> {
