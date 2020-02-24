@@ -1,5 +1,7 @@
 package definition;
 
+import java.util.ArrayList;
+
 class Node<Person> {
     private Person data;
     private Node<Person> next;
@@ -27,5 +29,5 @@ class Node<Person> {
 }
 
 public class ContactsADT {
-
+    ArrayList<String> arrayOfNames = new ArrayList<>();
 }
