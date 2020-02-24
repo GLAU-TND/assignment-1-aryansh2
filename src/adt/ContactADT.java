@@ -6,4 +6,6 @@ public interface ContactADT<Person> {
     boolean remove(int index);
 
     void search(String Name);
+
+    void viewAll();
 }
